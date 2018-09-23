@@ -1,0 +1,51 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: nfs-{{uuid}}
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: nfs-{{uuid}}
+    spec:
+      terminationGracePeriodSeconds: 1
+      {% if data_init_image %}
+      initContainers:
+      - name: init
+        image: {{ data_init_image }}
+        volumeMounts:
+          - mountPath: /exports/data
+            name: exports
+            subPath: data
+          {% if data_init_secret %}
+          - mountPath: /secrets
+            name: secrets
+          {% endif %}
+      {% endif %}
+      containers:
+      - name: nfs
+        image: k8s.gcr.io/volume-nfs:0.8
+        ports:
+          - name: nfs
+            containerPort: 2049
+          - name: mountd
+            containerPort: 20048
+          - name: rpcbind
+            containerPort: 111
+        securityContext:
+          privileged: true
+        volumeMounts:
+          - mountPath: /exports
+            name: exports
+      volumes:
+        - name: exports
+          emptyDir: {}
+        {% if data_init_secret %}
+        - name: secrets
+          secret:
+            secretName: {{ data_init_secret }}
+        {% endif %}

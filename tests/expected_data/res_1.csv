@@ -1,0 +1,33 @@
+url,foo,error,baz
+http://httpbin.org/get?foo=bar0,bar0,,5
+http://httpbin.org/get?foo=baz0,baz0,,5
+http://httpbin.org/get?foo=bax0,bax0,,5
+http://void.void/void0,,"HTTPConnectionPool(host='void.void', port=80): Max retries exceeded with url: /void0 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection ",5
+http://httpbin.org/get?foo=ASD0,ASD0,,5
+http://httpbin.org/get?foo=GFH0,GFH0,,5
+http://0.0.0.0/0000,,"HTTPConnectionPool(host='0.0.0.0', port=80): Max retries exceeded with url: /0000 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection ",5
+http://httpbin.org/get?foo=REQ0,REQ0,,5
+http://httpbin.org/get?foo=bar1,bar1,,5
+http://httpbin.org/get?foo=baz1,baz1,,5
+http://httpbin.org/get?foo=bax1,bax1,,5
+http://void.void/void1,,"HTTPConnectionPool(host='void.void', port=80): Max retries exceeded with url: /void1 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection ",5
+http://httpbin.org/get?foo=ASD1,ASD1,,5
+http://httpbin.org/get?foo=GFH1,GFH1,,5
+http://0.0.0.0/0001,,"HTTPConnectionPool(host='0.0.0.0', port=80): Max retries exceeded with url: /0001 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection ",5
+http://httpbin.org/get?foo=REQ1,REQ1,,5
+http://httpbin.org/get?foo=bar2,bar2,,5
+http://httpbin.org/get?foo=baz2,baz2,,5
+http://httpbin.org/get?foo=bax2,bax2,,5
+http://void.void/void2,,"HTTPConnectionPool(host='void.void', port=80): Max retries exceeded with url: /void2 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection ",5
+http://httpbin.org/get?foo=ASD2,ASD2,,5
+http://httpbin.org/get?foo=GFH2,GFH2,,5
+http://0.0.0.0/0002,,"HTTPConnectionPool(host='0.0.0.0', port=80): Max retries exceeded with url: /0002 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection ",5
+http://httpbin.org/get?foo=REQ2,REQ2,,5
+http://httpbin.org/get?foo=bar3,bar3,,5
+http://httpbin.org/get?foo=baz3,baz3,,5
+http://httpbin.org/get?foo=bax3,bax3,,5
+http://void.void/void3,,"HTTPConnectionPool(host='void.void', port=80): Max retries exceeded with url: /void3 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection ",5
+http://httpbin.org/get?foo=ASD3,ASD3,,5
+http://httpbin.org/get?foo=GFH3,GFH3,,5
+http://0.0.0.0/0003,,"HTTPConnectionPool(host='0.0.0.0', port=80): Max retries exceeded with url: /0003 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection ",5
+http://httpbin.org/get?foo=REQ3,REQ3,,5

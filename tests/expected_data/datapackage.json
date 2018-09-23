@@ -1,0 +1,40 @@
+{
+  "bytes": 2427,
+  "count_of_rows": 32,
+  "hash": "e1d15b40c4cd05e1cf6c2468925fc96b",
+  "profile": "data-package",
+  "resources": [
+    {
+      "name": "res_1",
+      "path": "res_1.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "url",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "foo",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "error",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "baz",
+            "type": "integer"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ]
+}

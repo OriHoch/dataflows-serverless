@@ -1,0 +1,40 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sec-{{secondary}}-{{uuid}}
+  labels:
+    jobgroup: secs-{{uuid}}
+spec:
+  template:
+    metadata:
+      name: sec-{{secondary}}-{{uuid}}
+      labels:
+        jobgroup: secs-{{uuid}}
+    spec:
+      terminationGracePeriodSeconds: 1
+      containers:
+      - name: flow
+        image: {{image}}
+        {% if debug %}
+        command: [sleep, "86400"]
+        {% endif %}
+        env:
+        - name: DATAFLOWS_SERVERLESS_ROLE
+          value: secondary
+        - name: SECONDARY
+          value: "{{secondary}}"
+        - name: SECONDARIES
+          value: "{{secondaries}}"
+        - name: FLOW_FILE
+          value: flow.py
+        - name: DATAFLOWS_WORKDIR
+          value: /var/dataflows-workdir
+        volumeMounts:
+        - mountPath: /var/dataflows-workdir
+          name: workdir
+      restartPolicy: Never
+      volumes:
+      - name: workdir
+        nfs:
+          server: {{nfs}}
+          path: "/"
